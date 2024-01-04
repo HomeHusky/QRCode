@@ -1,0 +1,58 @@
+BACKROP
+import GlobalBackdrop from ...
+
+Trong function:
+const [isBackdropOpen, setIsBackdropOpen] = useState(false);
+  const handleOpenBackdrop = () => {
+    setIsBackdropOpen(true);
+  };
+  const handleCloseBackdrop = () => {
+    setIsBackdropOpen(false);
+  };
+
+  Khi return:
+    <GlobalBackdrop open={isBackdropOpen} handleClose={handleCloseBackdrop} />
+
+SNACKBAR
+Trong component Login
+
+Những component needed:
++ Tooltip: https://mui.com/material-ui/react-tooltip/ (Hien mo ta ngay canh component)
++ Badge: https://mui.com/material-ui/react-badge/ (So luong thong bao)
++ Card: https://mui.com/material-ui/react-card/ (Thẻ ảnh)
++ Dialog: https://mui.com/material-ui/react-dialog/
++ Progress: https://mui.com/material-ui/react-progress/
++ Skeleton: https://mui.com/material-ui/react-skeleton/ (Load trang thay vi dung backdrop hay progress)
++ Breadcrumbs: https://mui.com/material-ui/react-breadcrumbs/ (VD: MUI > Core > Breadcrumbs)
++ Drawer: https://mui.com/material-ui/react-drawer/ (Dung cho mobile, thanh ben trai xuat hien)
++ Menu: https://mui.com/material-ui/react-menu/ (Co option dropdown de lua chon)
++ Pagination: https://mui.com/material-ui/react-pagination/ (Nen dung trong trang danh sach anh)
++ Speed Dial: https://mui.com/material-ui/react-speed-dial/ (Nen dung cho edit)
++ Stepper: https://mui.com/material-ui/react-stepper/ (Nen dung cho huong dan su dung)
++ Transitions: https://mui.com/material-ui/transitions/ (Nhieu chuc nang phu hop vd: Grow)
+
+
+process.env.DOMAIN_SERVER + "/api/pics/img/"
+
+
+const crypto = require('crypto');
+
+// Chuỗi dữ liệu cần mã hóa
+const plainTextData = 'YourDataHere';
+const secretKey = 'YourSecretKey';
+
+// Tạo mã hash
+const hash = crypto.createHmac('sha256', secretKey)
+                   .update(plainTextData)
+                   .digest('hex');
+
+// In ra mã hash
+console.log('Hash:', hash);
+
+// Giải mã bằng cùng một secretKey
+const decipher = crypto.createDecipher('aes256', secretKey);
+let decrypted = decipher.update(hash, 'hex', 'utf8');
+decrypted += decipher.final('utf8');
+
+// In ra giá trị giải mã
+console.log('Decrypted:', decrypted);
