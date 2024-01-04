@@ -11,7 +11,7 @@ const ScanQR = () => {
     if (data) {
       try {
         // 2. Gửi Yêu Cầu Đến Máy Chủ
-        const response = await axios.post('http://10.72.37.153:443/api/scan', { qrData: data });
+        const response = await axios.post('http://qr-code-sigma-eight.vercel.app:443/api/scan', { qrData: data });
 
         // 5. Render Trang Từ Nội Dung Phản Hồi
         setResult(response.data);

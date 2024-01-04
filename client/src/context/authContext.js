@@ -9,7 +9,7 @@ export const AuthContextProvider = ({ children }) => {
   );
 
   const login = async (inputs) => {
-    const res = await axios.post("http://10.72.37.153:443/api/auth/login", inputs, {
+    const res = await axios.post("http://qr-code-sigma-eight.vercel.app:443/api/auth/login", inputs, {
       withCredentials: true,
     });
 
